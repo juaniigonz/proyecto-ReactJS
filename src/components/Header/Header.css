@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 82, 0);
+    text-decoration: none;
+}
+.logo{
+    width: 12%;
+}
+.logo img{
+    width: 100%;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;         
+    transition: transform 0.2s;
+    margin-top: 8px;
+}
+
+.navLinks{
+    display: flex;
+}
+.navLinks a {
+    margin-right:50px ;
+    list-style: none;
+    color: black;
+    align-items:center ;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+.cart{
+    width: 100px;
+}
+

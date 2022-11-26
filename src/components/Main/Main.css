@@ -1,0 +1,10 @@
+.Bnv{
+    text-align: center;
+    width: 100%;
+}
+.cardsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
