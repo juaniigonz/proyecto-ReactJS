@@ -8,11 +8,14 @@ function ItemDetailContainer(){
 
 let {id} = useParams()
 
-useEffect(()=>{
-    getItem(id)
-    .then((respuesta)=> setProducto(respuesta))
-    .catch( errorMsg => console.error("error en la promise", errorMsg))
-},[])
+async function getData(){
+    let respuesta = await getItem(id)
+    setProducto(respuesta)
+  }
+
+  useEffect( () =>{
+    getData();
+  }, [])
 
 return( 
     <div className="card-detail_main">
