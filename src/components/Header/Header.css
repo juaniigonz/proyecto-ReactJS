@@ -29,5 +29,14 @@
 
 .cart{
     width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navFlex{
+    display: flex;
+    align-items: center;
+    margin-left: 40%;
 }
 

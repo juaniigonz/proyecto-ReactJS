@@ -8,7 +8,7 @@ export default function Header() {
         <div className='logo'>
         <img src="/img/knifeLogo.jpg" alt="knife" />
         </div>
-        <div>
+        <div className='navFlex'>
             <ul className='navLinks'>
                 <a href=""><li>Caza</li></a>
                 <a href=""><li>Defensa personal</li></a>
