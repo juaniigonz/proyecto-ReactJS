@@ -1,18 +1,19 @@
 import React from 'react'
 import Cart from './CartWidget'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
     <header className='header'>
-        <div className='logo'>
+        <Link to="/" className='logo'>
         <img src="/img/knifeLogo.jpg" alt="knife" />
-        </div>
+        </Link>
         <div className='navFlex'>
             <ul className='navLinks'>
-                <a href=""><li>Caza</li></a>
-                <a href=""><li>Defensa personal</li></a>
-                <a href=""><li>Cocina</li></a>
+                <Link to="/categoria/caza"><li>Caza</li></Link>
+                <Link to="/categoria/defensa"><li>Defensa personal</li></Link>
+                <Link to="/categoria/cocina"><li>Cocina</li></Link>
             </ul>
         </div>
         <Cart/>
