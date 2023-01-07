@@ -1,10 +1,21 @@
 .card{
     display: flex;
     flex-direction: column;
-    width: 25%;
     justify-content: center;
-    align-content: center;
+    align-content: stretch;
     align-items: center;
-    margin: 20px;
+    padding: 10px;
     background-color: aliceblue;
+    width: 100%;
+}
+.cardImg {
+    width: 300px;
+    min-width: 300px;
+    min-height: 300px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;         
+    transition: transform 0.2s;
+}
+.cardImg img {
+    width: 100%;
 }

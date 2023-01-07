@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 25%;
+  height: 25%;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -9,10 +10,12 @@
   background-color: aliceblue;
   text-decoration: none;
   color: black;
+  
 }
 
 .flexContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  
 }

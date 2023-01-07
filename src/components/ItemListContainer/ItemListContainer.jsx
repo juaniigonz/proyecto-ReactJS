@@ -17,6 +17,7 @@ function ItemListContainer() {
       getCategoria(categoriaID)
       .then ((respuestaFiltrada)=> setProductos(respuestaFiltrada))
     }
+    console.log(productos)
   }, 
 [categoriaID]);
 
