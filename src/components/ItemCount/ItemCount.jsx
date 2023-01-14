@@ -1,30 +1,28 @@
 import React, { useState } from "react";
-import productos from "../../data/productos";
+import productos from "../../data/productos.js";
+import Button from "../Btn/Button.jsx";
 
 
-
-export default function ItemCount() {
+function ItemCount({onAddCart, stock}) {
   const [count, setCount] = useState(1);
+  
 
   function handlePlus() {
-    setCount(count + 1);
+    if(count < stock ) setCount(count + 1);
+    
   }
 
   function handleLess() {
-    setCount(count - 1);
+    if (count > 1) setCount(count - 1);
   }
-
-function onAddCart(){
- console.log("agregado");
-}
-
 
   return (
     <div>
-      <button disabled={count === 1} onClick={handleLess}>-</button>
+      <Button funcBtn={handleLess}>-</Button>
       <span>{count}</span>
-      <button disabled={count === productos.stock} onClick={handlePlus}>+</button>
-      <button onClick={onAddCart}>Agregar</button>
+      <Button funcBtn={handlePlus}>+</Button>
+      <Button funcBtn={()=>onAddCart(count)}>Agregar</Button>
     </div>
   );
 }
+export default ItemCount

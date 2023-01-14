@@ -1,35 +1,29 @@
 import React, {useState, useEffect} from "react";
-import { getItem } from "../services/mockService"
-import ItemCount from "../ItemCount/ItemCount";
+import { getItem } from "../services/firebase"
 import { useParams } from "react-router-dom";
 import "./ItemDetail.css"
+import ItemDetail from "./ItemDetail";
+import Loader from "../Loader/Loader";
+
 
 
 function ItemDetailContainer(){
   const [producto, setProducto] = useState([])
-  
+  const [isLoading, setIsLoading] = useState(true)
   let {id} = useParams()
 
 async function getData(){
     let respuesta = await getItem(id)
-    console.log(producto)
     setProducto(respuesta)
+    setIsLoading(false)
   }
 
   useEffect( () =>{
     getData();
   }, [])
-
-return( 
-    <div className="card-detail_main">
-    <h1 className="card-detail_detail">{producto.producto}</h1>
-    <div className="card-detail_img">
-    <img src={producto.imagen} alt={producto.producto} />
-    </div>
-    <p>{producto.descripcion}</p>
-    <span className="priceTag">${producto.precio}</span>
-    <ItemCount/>
-</div>
+return(<>  
+  {isLoading ? <Loader/> : <ItemDetail producto={producto}/>}
+    </>
 )}
 
 

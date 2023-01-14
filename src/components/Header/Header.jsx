@@ -1,7 +1,8 @@
 import React from 'react'
-import Cart from './CartWidget'
+import CartWidget from './CartWidget'
 import './Header.css'
 import { Link } from 'react-router-dom'
+
 
 export default function Header() {
   return (
@@ -16,7 +17,9 @@ export default function Header() {
                 <Link to="/categoria/cocina"><li>Cocina</li></Link>
             </ul>
         </div>
-        <Cart/>
+        <Link className='cart' to="/cart">
+          <CartWidget/>
+        </Link>
     </header>
   )
 }
