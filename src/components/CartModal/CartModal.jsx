@@ -3,16 +3,29 @@ import { cartContext } from "../../contextStorage/cartContext";
 import CartBase from "./CartBase";
 import Button from "../Btn/Button";
 import { createBuyOrderWithStock } from "../services/firebase";
+import Checkout from "../Form/Checkout";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function CartModal() {
   const { cart, deleteCart } = useContext(cartContext);
-  function handleCheckOut() {
+  const [emptyCart, setIsEmpty] = useState(cart.length === 0)
+  const [totalCart, setTotalCart] = useState(0)
+
+  useEffect(()=>{
+    setIsEmpty(cart.length === 0)
+    let initValue = 0
+    cart.forEach(element =>{
+      initValue +=(element.count * element.precio)
+    })
+    setTotalCart(initValue)
+  },[cart])
+  
+  
+  function handleCheckOut(buyerData) {
     const order = {
-      buyer: {
-        name: "",
-        email: "",
-        phone: "",
-      },
+      buyer: buyerData,
       items: cart,
       total: {},
       date: new Date(),
@@ -24,7 +37,20 @@ function CartModal() {
     });
   }
 
+  if (emptyCart) {
+    return (
+      <div>
+        <h2>
+          Tu carrito esta vacio, vuelve al inicio y encuentra los mejor precios
+          para tus necesidades
+        </h2>
+        <Link to={"/"} type="button">Inicio</Link>
+      </div>
+    );
+  }
+    
   return (
+    <>
     <div>
       <h1>Tu Carrito</h1>
       <table>
@@ -43,11 +69,12 @@ function CartModal() {
         </tbody>
       </table>
       <div>
-        <h4> Total Final: $ </h4>
+        <h4> Total Final: $ {totalCart}</h4>
         <Button funcBtn={deleteCart}>Eliminar Carrito</Button>
-        <Button funcBtn={handleCheckOut}>Finalizar Compra</Button>
+        <Checkout funcBtn={handleCheckOut} />
       </div>
     </div>
+    </>
   );
 }
 
