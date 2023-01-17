@@ -13,19 +13,31 @@ function ItemDetail({ producto }) {
     addToCart(producto, count);
   }
   return (
-    <div className="card-detail_main">
-      <h1 className="card-detail_detail">{producto.producto}</h1>
-      <div className="card-detail_img">
+    <div className="detailMain">
+      <div className="detailImg">
         <img src={producto.imagen} alt={producto.producto} />
       </div>
-      <p>{producto.descripcion}</p>
-      <span className="priceTag">${producto.precio}</span>
-
-      {countInCart ? (
-          <Link to="/cart">Ir al carrito</Link>
+      <div className="detailDesc">
+        <h1 className="detailTitle">{producto.producto}</h1>
+        <p>{producto.descripcion}</p>
+        <div className="priceCount">
+          <span className="priceTag">${producto.precio}</span>
+          {countInCart ? (
+            <div className="lastStepDetail">
+              <Link className="detailLink" to="/cart">
+                Ir al carrito
+              </Link>
+              <Link to="/">Continuar Comprando</Link>
+            </div>
           ) : (
-              <ItemCount stock={producto.stock} onAddCart={handleAddToCart} />
-      )}
+            <ItemCount
+              className="itemCount"
+              stock={producto.stock}
+              onAddCart={handleAddToCart}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 }

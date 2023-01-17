@@ -1,16 +1,71 @@
-.card-detail_main{
+.detailMain {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 10px;
+  min-height: 60vh;
 }
-.card-detail_img img{
-  width: 40%;
+.detailImg img {
+  width: 99%;
   margin: 3%;
+  mix-blend-mode: multiply;
+  transition: transform 0.2s;
+  filter: brightness(1.1);
 }
 
-.card-detail_img {
-display: flex;
-justify-content: center;
+.detailImg {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.969);
+  justify-content: center;
+  width: 400px;
+  max-height: 300px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  margin: 5px;
 }
 
+.detailTitle {
+  text-transform: capitalize;
+  align-self: center;
+}
+
+.detailDesc {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.priceTag {
+  font-weight: 800;
+  font-size: large;
+  align-self: center;
+  margin: 0 20px;
+}
+
+.detailDesc p{
+  align-self: center;
+  font-size: 1.2rem;
+  width: 65%;
+}
+
+.priceCount{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.lastStepDetail a{
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration:none;
+  color: black;
+  margin: 0 10px;
+  background-color: rgb(250, 252, 253);
+  border: 0.5px solid black ;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.priceCount button{
+  color: black;
+  margin: 5px;
+}

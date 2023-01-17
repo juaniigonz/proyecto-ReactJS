@@ -5,17 +5,33 @@
     align-content: stretch;
     align-items: center;
     padding: 10px;
-    background-color: aliceblue;
+    background-color: #9BA17B;
     width: 100%;
+    border: 1px solid black;
+    min-height: 400px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease;
+}
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 .cardImg {
-    width: 300px;
-    min-width: 300px;
-    min-height: 300px;
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;         
-    transition: transform 0.2s;
+    width: 50%;
+    filter: brightness(1);
+    mix-blend-mode: multiply;
 }
 .cardImg img {
     width: 100%;
+}
+
+.prodTitle{
+    text-transform: capitalize;
+}
+
+.cardDesc{
+    color: rgb(78, 78, 78);
+    font-size: small;
+}
+.prodPrice{
+    font-weight: 800;
 }

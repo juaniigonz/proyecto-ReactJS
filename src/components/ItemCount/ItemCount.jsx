@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import productos from "../../data/productos.js";
 import Button from "../Btn/Button.jsx";
 
 

@@ -1,8 +1,9 @@
 import React from "react";
+import "../CartModal/cart.css"
 
 function InputForm(props) {
   return (
-    <div>
+    <div className="formLabelInput">
       <label>{props.title}</label>
       <input
         required

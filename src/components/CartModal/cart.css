@@ -1,0 +1,113 @@
+.flexEmpty{
+    display: flex;
+    flex-direction: column;
+}
+.flexEmpty h2{
+    align-self: center;
+}
+
+.flexEmpty a{
+    display: flex;
+    align-self: center;
+    font-size: larger;
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+    background-color:  rgb(0, 82, 0);
+    border: 2px solid black;
+    width: 8%;
+    justify-content: center;
+}
+
+
+.cartContainer{
+    display: flex;
+    flex-direction: column;
+}
+.tableFlex{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.theadFlex{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    background-color: #CFB997 ;
+    width: 100%;
+}
+.theadFlex tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.theadFlex tr th{
+display: flex;
+margin: 2px 80px;
+}
+
+.tbodyFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgCart{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 0.1px solid black
+}
+.itemCartTable{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+
+.itemCartTable td{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px;
+    min-width: 15%;
+    max-width: 16.6%;
+    min-height: 90px;
+    font-weight: 700;
+}
+
+.itemCartTable td button{
+    background-color: rgba(255, 0, 0, 0.795);
+    font-size: larger;
+    font-weight: 700;
+}
+
+.finalCart{
+    display: flex;
+    flex-direction: column;
+}
+.finalCart button{
+    width: 10%;
+    background-color: rgba(255, 0, 0, 0.822);
+    margin: 10px;
+}
+
+form button{
+    background-color: rgba(0, 128, 0, 0.815) !important;
+    margin: 10px;
+}
+
+.formFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.formLabelInput{
+    display: flex;
+    margin: 5px;
+}
+.formLabelInput label{
+    min-width: 150px;
+    font-weight: 500;
+}

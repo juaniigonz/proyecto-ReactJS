@@ -3,13 +3,13 @@ import {
   getFirestore,
   doc,
   getDoc,
-  collection,
   getDocs,
-  query,
-  where,
+  collection,
   addDoc,
+  where,
   documentId,
   writeBatch,
+  query,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -76,7 +76,7 @@ export async function getCategoria(categoriaID) {
 
 export async function createBuyOrderWithStock(order) {
   const collectionRef = collection(DB, "orders");
-  const collectionProductsRef = collection(DB, "data");
+  const collectionProductsRef = collection(DB, "productos");
 
   let batch = writeBatch(DB);
 
@@ -91,6 +91,8 @@ export async function createBuyOrderWithStock(order) {
     let ItemInCart = order.items.find((item) => item.id === doc.id);
     let countItemInCart = ItemInCart.count;
 
+    console.log(stockDisponible);
+    console.log(countItemInCart);
 
     if (stockDisponible < countItemInCart) throw new Error("Stock agotado");
     else batch.update(doc.ref, { stock: stockDisponible - countItemInCart });

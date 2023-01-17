@@ -8,16 +8,14 @@ export default function Item(props) {
   return (
     <Link to={urlDetail}>
       <div className="card">
-        <h3>{props.producto}</h3>
+        <h3 className="prodTitle">{props.producto}</h3>
         <div className="cardImg">
           <img src={props.imagen} alt="item"></img>
         </div>
         <div className="cardDesc">
           <p>{props.descripcion}</p>
-          <span>$ {props.precio}</span>
-          <a href=""></a>
-          <span>stock disponible :{props.stock}</span>
         </div>
+          <span className="prodPrice">Precio: $ {props.precio}</span>
       </div>
     </Link>
   );
