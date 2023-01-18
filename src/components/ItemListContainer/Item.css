@@ -16,10 +16,7 @@
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 .cardImg {
-    width: 50%;
-    filter: brightness(1);
-    mix-blend-mode: multiply;
-}
+    width: 50%;}
 .cardImg img {
     width: 100%;
 }

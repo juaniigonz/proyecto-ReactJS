@@ -5,13 +5,10 @@
     text-decoration: none;
 }
 .logo{
-    width: 12%;
+    width: 10%;
 }
 .logo img{
     width: 100%;
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;         
-    transition: transform 0.2s;
     margin-top: 8px;
 }
 
