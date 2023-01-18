@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./cart.css";
+import Swal from 'sweetalert2'
 
 function CartModal() {
   const { cart, deleteCart } = useContext(cartContext);
@@ -36,7 +37,12 @@ function CartModal() {
       return (
         setOrder(id),
         deleteCart(),
-        alert(`orden generada, numero de order ${id}`)
+        Swal.fire({
+          icon: 'success',
+          title: 'Compra generada',
+          text: `numero de orden ${id}`,
+        })
+        
       );
     });
   }
