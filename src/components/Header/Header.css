@@ -3,13 +3,14 @@
     flex-direction: row;
     background-color: #61764B;
     text-decoration: none;
+    max-height: 100px;
 }
 .logo{
     width: 10%;
 }
 .logo img{
-    width: 100%;
-    margin-top: 8px;
+    width: 80%;
+    margin-left: 5px;
 }
 
 .navLinks{
