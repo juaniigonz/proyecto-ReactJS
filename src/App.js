@@ -16,7 +16,7 @@ function App() {
           <Header />
           <Routes>
           <Route path="/" element={<ItemListContainer />} />
-            <Route path="/proyecto-ReactJS/" element={<ItemListContainer />} />
+            <Route path="/proyecto-ReactJS" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route
               path="/categoria/:categoriaID"
